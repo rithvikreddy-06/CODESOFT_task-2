@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Marketing - Boost Your Startup</title>
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #0f0c29;
+            --secondary-bg: #1a153c;
+            --accent-pink: #da22ff;
+            --accent-blue: #8f94fb;
+            --text-light: #ffffff;
+            --text-dark: #cccccc;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .logo span {
+            color: var(--accent-pink);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-family: var(--font-heading);
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-pink);
+        }
+
+        /* --- Hero Section --- */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, var(--primary-bg), #302b63);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        #home h1 {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        #home p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--text-light);
+            color: var(--primary-bg);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-pink);
+            color: var(--text-light);
+            transform: translateY(-3px);
+        }
+
+        /* Background Waves & Rocket */
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background-size: 1000px 200px;
+        }
+
+        .wave.wave1 {
+            background: url(https://cdn.jsdelivr.net/gh/Signals-Development/signals-dev-website@main/src/assets/images/wave.png);
+            animation: animate 30s linear infinite;
+            z-index: 3;
+            opacity: 0.8;
+            animation-delay: 0s;
+            bottom: 0;
+        }
+        .wave.wave2 {
+            background: url(https://cdn.jsdelivr.net/gh/Signals-Development/signals-dev-website@main/src/assets/images/wave.png);
+            animation: animate-reverse 15s linear infinite;
+            z-index: 2;
+            opacity: 0.5;
+            animation-delay: -5s;
+            bottom: 10px;
+        }
+        .rocket {
+            position: absolute;
+            right: 10%;
+            bottom: 15%;
+            width: 150px;
+            transform: rotate(-45deg);
+            animation: rocket-fly 10s ease-in-out infinite;
+        }
+        
+        @keyframes animate {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1000px; }
+        }
+        @keyframes animate-reverse {
+            0% { background-position-x: 1000px; }
+            100% { background-position-x: 0; }
+        }
+        @keyframes rocket-fly {
+            0%, 100% { transform: translateY(0) rotate(-45deg); }
+            50% { transform: translateY(-30px) rotate(-40deg); }
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 100px 0;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+        }
+
+        #about, #news {
+            background-color: var(--secondary-bg);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-pink);
+        }
+        .card p {
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background: #000;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Digital<span>M.</span></div>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#news">News</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Boost Your Startup</h1>
+                    <p>
+                        We provide cutting-edge digital marketing solutions to elevate your brand, engage your audience, and drive growth. Let's launch your success to new heights.
+                    </p>
+                    <a href="#contact" class="cta-button">Boost Now &rarr;</a>
+                </div>
+            </div>
+            <!-- Decorative elements -->
+            <img src="https://www.pngmart.com/files/6/Rocket-PNG-Transparent-Picture.png" alt="Rocket" class="rocket">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Us</h2>
+                <p style="text-align: center; max-width: 800px; margin: auto; color: var(--text-dark); line-height: 1.8;">
+                    We are a team of passionate marketers, designers, and strategists dedicated to helping startups thrive in the digital landscape. Founded in 2020, our mission is to deliver measurable results and build lasting partnerships. We believe in data-driven strategies and creative storytelling to make your brand stand out.
+                </p>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <h3>SEO Optimization</h3>
+                        <p>Increase your organic visibility and rank higher on search engines with our expert SEO strategies, from keyword research to technical audits.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Social Media Marketing</h3>
+                        <p>Engage with your audience and build a loyal community through targeted content creation and management across all major social platforms.</p>
+                    </div>
+                    <div class="card">
+                        <h3>PPC Campaigns</h3>
+                        <p>Drive targeted traffic and generate immediate leads with high-ROI Pay-Per-Click advertising campaigns on Google Ads and social media.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Us?</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <h3>Data-Driven Results</h3>
+                        <p>We use advanced analytics to track performance and optimize our strategies, ensuring every decision is backed by data for maximum impact.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Creative Team</h3>
+                        <p>Our in-house team of designers and content creators works to build a unique and compelling brand identity that resonates with your audience.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Startup Focused</h3>
+                        <p>We understand the unique challenges and opportunities for startups. Our flexible and scalable solutions are designed to grow with you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news">
+            <div class="container">
+                <h2 class="section-title">Latest News</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <h3>The Future of AI in Marketing</h3>
+                        <p>Explore how artificial intelligence is revolutionizing content creation, personalization, and customer analytics in the digital marketing world.</p>
+                    </div>
+                    <div class="card">
+                        <h3>5 SEO Trends to Watch in 2026</h3>
+                        <p>Stay ahead of the curve with our insights into the latest SEO trends, from voice search optimization to the growing importance of E-A-T signals.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Building a Brand on instagram</h3>
+                        <p>A guide for startups on how to leverage the power of short-form video content to build brand awareness and engage a new generation of consumers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DigitalM. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
